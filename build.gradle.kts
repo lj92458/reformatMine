@@ -100,8 +100,8 @@ tasks {
     }
 
     signPlugin {
-        certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
-        privateKey.set(System.getenv("PRIVATE_KEY"))
+        certificateChain.set(File(System.getenv("CERTIFICATE_CHAIN") ).readText(Charsets.UTF_8))
+        privateKey.set(File(System.getenv("PRIVATE_KEY") ).readText(Charsets.UTF_8))
         password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
     }
 
