@@ -16,15 +16,26 @@ class ReformatMine : AnAction("ReformatMine") {
         val editor: Editor? = event.getData(LangDataKeys.EDITOR)
         if (psiFile != null && editor != null) {
             try {
-                WriteCommandAction.runWriteCommandAction(psiFile.getProject(), "ReformatMine", "empty",
+                WriteCommandAction.runWriteCommandAction(
+                    psiFile.getProject(), "ReformatMine", "empty",
                     {
                         if (editor.selectionModel.hasSelection()) {
-                            CodeStyleManager.getInstance(psiFile.getProject()).reformatText(psiFile, editor.selectionModel.selectionStart, editor.selectionModel.selectionEnd)
+                            CodeStyleManager.getInstance(psiFile.getProject()).reformatText(
+                                psiFile,
+                                editor.selectionModel.selectionStart,
+                                editor.selectionModel.selectionEnd
+                            )
                         } else {
-                            Messages.showMessageDialog(psiFile.getProject(), "You must select an area, then you can reformat this area.", "Message", Messages.getInformationIcon())
+                            Messages.showMessageDialog(
+                                psiFile.getProject(),
+                                "You must select an area, then you can reformat this area.",
+                                "Message",
+                                Messages.getInformationIcon()
+                            )
                         }
                     },
-                    psiFile)
+                    psiFile
+                )
 
             } catch (e: Exception) {
                 println("reformat code failed")
