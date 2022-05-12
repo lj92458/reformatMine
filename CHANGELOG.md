@@ -11,3 +11,6 @@
 ## [1.0.2]
 ### change
 - change some config properties.
+## [1.0.3]
+### change
+- fix bug: awt shouldn't be used in write action.
