@@ -2,25 +2,29 @@
   <configuration default="false" name="Run Verifications" type="GradleRunConfiguration" factoryName="Gradle">
     <log_file alias="idea.log" path="$PROJECT_DIR$/build/idea-sandbox/system/log/idea.log" />
     <ExternalSystemSettings>
+      <option name="env">
+        <map>
+          <entry key="CERTIFICATE_CHAIN" value="C:\Users\Administrator\.ssh\rsa4096chain.crt" />
+          <entry key="PRIVATE_KEY" value="C:\Users\Administrator\.ssh\rsa4096.private" />
+          <entry key="PRIVATE_KEY_PASSWORD" value="Lj/924586" />
+          <entry key="PUBLISH_TOKEN" value="perm:bGo5MjQ1OA==.OTItNjA1MA==.XncucJLTRGj8Q6bYhL2X0YkUKHGZz7" />
+        </map>
+      </option>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$" />
       <option name="externalSystemIdString" value="GRADLE" />
-      <option name="scriptParameters" value="" />
+      <option name="scriptParameters" value="runPluginVerifier" />
       <option name="taskDescriptions">
         <list />
       </option>
       <option name="taskNames">
-        <list>
-          <option value="runPluginVerifier" />
-        </list>
+        <list />
       </option>
-      <option name="vmOptions" value="" />
+      <option name="vmOptions" />
     </ExternalSystemSettings>
     <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
     <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
     <DebugAllEnabled>false</DebugAllEnabled>
-    <method v="2">
-      <option name="Gradle.BeforeRunTask" enabled="true" tasks="clean" externalProjectPath="$PROJECT_DIR$" vmOptions="" scriptParameters="" />
-    </method>
+    <method v="2" />
   </configuration>
 </component>

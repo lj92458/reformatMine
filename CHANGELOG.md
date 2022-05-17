@@ -14,3 +14,6 @@
 ## [1.0.3]
 ### change
 - fix bug: awt shouldn't be used in write action.
+## [1.0.5]
+### change
+- add description in plugin.xml

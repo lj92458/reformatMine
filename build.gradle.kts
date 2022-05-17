@@ -9,7 +9,7 @@ plugins {
     // Kotlin support
     id("org.jetbrains.kotlin.jvm") version "1.6.10"
     // Gradle IntelliJ Plugin
-    id("org.jetbrains.intellij") version "1.4.0"
+    id("org.jetbrains.intellij") version "1.5.3"
     // Gradle Changelog Plugin
     id("org.jetbrains.changelog") version "1.3.1"
     // Gradle Qodana Plugin
@@ -22,6 +22,10 @@ version = properties("pluginVersion")
 // Configure project's dependencies
 repositories {
     mavenCentral()
+    mavenLocal()
+    maven{
+        setUrl("https://maven.aliyun.com/repository/jcenter")
+    }
 }
 
 // Configure Gradle IntelliJ Plugin - read more: https://github.com/JetBrains/gradle-intellij-plugin
@@ -100,8 +104,8 @@ tasks {
     }
 
     signPlugin {
-        certificateChain.set(File(System.getenv("CERTIFICATE_CHAIN") ).readText(Charsets.UTF_8))
-        privateKey.set(File(System.getenv("PRIVATE_KEY") ).readText(Charsets.UTF_8))
+        certificateChain.set(File(System.getenv("CERTIFICATE_CHAIN")).readText(Charsets.UTF_8))
+        privateKey.set(File(System.getenv("PRIVATE_KEY")).readText(Charsets.UTF_8))
         password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
     }
 
