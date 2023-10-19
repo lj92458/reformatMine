@@ -106,12 +106,12 @@ tasks {
     signPlugin {
         certificateChain.set(File(System.getenv("CERTIFICATE_CHAIN")?:"C:/Users/Administrator/.ssh/rsa4096chain.crt").readText(Charsets.UTF_8))
         privateKey.set(File(System.getenv("PRIVATE_KEY")?:"C:/Users/Administrator/.ssh/rsa4096.private").readText(Charsets.UTF_8))
-        password.set(File(System.getenv("PRIVATE_KEY_PASSWORD")?:"C:/Users/Administrator/.ssh/plugin.pwd").readText(Charsets.UTF_8))
+        password.set(System.getenv("PRIVATE_KEY_PASSWORD")?: File("C:/Users/Administrator/.ssh/plugin.pwd").readText(Charsets.UTF_8))
     }
 
     publishPlugin {
         dependsOn("patchChangelog")
-        token.set(File(System.getenv("PUBLISH_TOKEN")?:"C:/Users/Administrator/.ssh/plugin.token").readText(Charsets.UTF_8))
+        token.set(System.getenv("PUBLISH_TOKEN")?: File("C:/Users/Administrator/.ssh/plugin.token").readText(Charsets.UTF_8))
         // pluginVersion is based on the SemVer (https://semver.org) and supports pre-release labels, like 2.1.7-alpha.3
         // Specify pre-release label to publish the plugin in a custom Release Channel automatically. Read more:
         // https://plugins.jetbrains.com/docs/intellij/deployment.html#specifying-a-release-channel
